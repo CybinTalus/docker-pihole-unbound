@@ -1,5 +1,6 @@
 version: '2'
 
+# supposedly Portainer doesn't like named volumes? Need to research if this is limitation in previous version
 volumes:
   etc_pihole-unbound:
   etc_pihole_dnsmasq-unbound:
@@ -20,9 +21,9 @@ services:
       - 80:80/tcp
       # - 22/tcp # Uncomment to enable SSH
     environment:
-      ServerIP: ${ServerIP}
+      ServerIP: ${ServerIP} # Better to assign IP via network management and grab IP this way
       TZ: ${TZ}
-      WEBPASSWORD: ${WEBPASSWORD}
+      WEBPASSWORD: ${WEBPASSWORD} # Use for random password, which you can get via `docker logs pihole \| grep random`
       REV_SERVER: ${REV_SERVER}
       REV_SERVER_TARGET: ${REV_SERVER_TARGET}
       REV_SERVER_DOMAIN: ${REV_SERVER_DOMAIN}

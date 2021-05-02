@@ -1,5 +1,9 @@
 # Pi-Hole + Unbound on Docker
 
+## Cybin's notes
+
+The two container setup will be studied for future NAS use
+
 ### Use Docker to run [Pi-Hole](https://pi-hole.net) with an upstream [Unbound](https://nlnetlabs.nl/projects/unbound/about/) resolver.
 
 This repo has 2 different `docker-compose` configs-- choose your favorite. The `two-container` config may work better on Synology due to usage of `macvlan` networking which helps prevent port conflicts with the host.
